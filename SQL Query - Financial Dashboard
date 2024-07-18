@@ -50,8 +50,29 @@ CREATE TABLE cust_detail (
 
 -- 3. Copy csv data into SQL (remember to update the file name and file location in below query)
 
--- LOAD DATA INFILE 'C:\ProgramData\MySQL\MySQL Server 8.0\Uploads'
+-- LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\credit_card.csv"
 -- INTO TABLE credit_card
 -- FIELDS TERMINATED BY ','
 -- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS;
+
+-- LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\customer.csv"
+-- INTO TABLE credit_card
+-- FIELDS TERMINATED BY ','
+-- LINES TERMINATED BY '\n'
+
+
+-- 4. Insert additional data into SQL, using same COPY function
+
+-- copy additional data (week-53) in cc_detail table
+
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\cc_add.csv"
+INTO TABLE credit_card
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+ignore 1 rows
+
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\cust_add.csv"
+INTO TABLE customer
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+ignore 1 rows
